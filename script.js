@@ -18,3 +18,12 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1200,
     loop: true
 });
+
+document.querySelector("#download-cv").addEventListener("click", function () {
+    const link = document.createElement("a");
+    link.href = "assets/resume.docx.pdf"; // Path to your CV file
+    link.download = "My_CV.pdf"; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
